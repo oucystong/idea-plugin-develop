@@ -1,0 +1,40 @@
+<idea-plugin>
+    <id>com.codermonster.hello-world-plugin</id>
+
+    <!--    插件名称，不允许出现plugin字符串-->
+    <name>Hello-World</name>
+    <!--联系信息-->
+    <vendor email="buaastys@163.com" url="https://codermonster.top/">码农怪兽</vendor>
+
+
+    <!--    插件描述信息，少于40个字符IDEA可能会红色高亮提示，但是对插件的大包编译无影响。-->
+    <description><![CDATA[
+        <h2>HelloWordPlugin</h2>
+        <p>路漫漫其修远兮，吾将上下而求索。</p><br>
+        <p>穷则独善其身，达则兼济天下。</p><br>
+        <p>人生自古谁无死，留取丹心照汗青。</p><br>
+        <p>我们是国家的主人，应该处处为国家着想。</p><br>
+  ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+    <!--    插件更新日志-->
+    <change-notes>
+        <![CDATA[
+      1.0.0 项目初始化<br>
+      1.0.1 搭建项目框架
+        ]]>
+    </change-notes>
+
+
+    <actions>
+        <!-- 在此处添加你的Action -->
+        <action class="com.codermonster.helloworldplugin.HelloWorldAction" description="Notification Send">
+            <!-- 该标签表示通过快捷键触发Action，注意快捷键可能会冲突，导致功能无法被触发，更换绑定的快捷键即可 -->
+            <keyboard-shortcut first-keystroke="control shift 9" keymap="$default"/>
+        </action>
+    </actions>
+</idea-plugin>

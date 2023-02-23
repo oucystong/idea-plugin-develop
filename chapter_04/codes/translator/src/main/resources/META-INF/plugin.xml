@@ -1,0 +1,49 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.codermonster.translator</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>Translator</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="buaatys@163.com" url="https://codermonster.top/">码农怪兽</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    翻译插件 | 码农怪兽
+  ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!--                displayName属性和实现类中的展示名应该保持一致-->
+        <applicationConfigurable
+                parentId="tools"
+                instance="com.codermonster.translator.TranslatorSettingConfiguration"
+                id="com.codermonster.translator.TranslatorSettingConfiguration"
+                displayName="CoderMonsterTranslator"/>
+        <!--        注册持久化实现类-->
+        <applicationService serviceImplementation="com.codermonster.translator.TranslatorSetting"></applicationService>
+        <projectService serviceImplementation="com.codermonster.translator.TranslatorCache"></projectService>
+        <toolWindow id="CoderTranslator" anchor="right"
+                    factoryClass="com.codermonster.translator.TranslatorToolsWindow"/>
+    </extensions>
+
+
+    <actions>
+        <action id="translator" class="com.codermonster.translator.TranslatorAction" description="Translate"
+                text="Translate">
+            <!-- 绑定快捷键，此处也可以选择不绑定 -->
+            <keyboard-shortcut first-keystroke="control shift 9" keymap="$default"/>
+            <!-- 添加到鼠标右键菜单中 -->
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+    </actions>
+
+</idea-plugin>

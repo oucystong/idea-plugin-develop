@@ -16,14 +16,8 @@
 │   ├── assets // 文档中用到的图片
 │   ├── codes // 代码
 │   └── 开发IDEA插件的HelloWorld.md // 文档
-├── chapter_03 // 第三章节
-│   ├── assets
-│   ├── codes
-│   └── 插件扩展点开发.md
+.....省略
 ├── chapter_04 // 第四章节
-│   ├── assets
-│   ├── codes
-│   └── 配置数据持久化.md
 └── images // README用到的图片
     ├── 码农怪兽公众号二维码.png
     └── 赞赏码.JPG

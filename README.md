@@ -17,7 +17,6 @@
 │   ├── codes // 代码
 │   └── 开发IDEA插件的HelloWorld.md // 文档
 .....省略
-├── chapter_04 // 第四章节
 └── images // README用到的图片
     ├── 码农怪兽公众号二维码.png
     └── 赞赏码.JPG
